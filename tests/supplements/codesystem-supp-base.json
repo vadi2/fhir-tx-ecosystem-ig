@@ -1,0 +1,25 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "supp-base",
+  "url": "http://hl7.org/fhir/test/CodeSystem/supp-base",
+  "version": "1.0.0",
+  "name": "SuppBaseTest",
+  "title": "Supplement Base Test Code System",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-10-20",
+  "publisher": "FHIR Project",
+  "caseSensitive": true,
+  "language": "en",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "code1",
+      "display": "Code One"
+    },
+    {
+      "code": "code2",
+      "display": "Code Two"
+    }
+  ]
+}

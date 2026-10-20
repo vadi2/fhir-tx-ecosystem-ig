@@ -1,0 +1,27 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "supp-plain",
+  "url": "http://hl7.org/fhir/test/CodeSystem/supp-plain",
+  "version": "1.0.0",
+  "name": "SuppPlainTest",
+  "title": "Supplement For Any Version",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-10-20",
+  "publisher": "FHIR Project",
+  "caseSensitive": true,
+  "content": "supplement",
+  "supplements": "http://hl7.org/fhir/test/CodeSystem/supp-base",
+  "description": "Supplements supp-base, whatever its version",
+  "concept": [
+    {
+      "code": "code1",
+      "designation": [
+        {
+          "language": "nl",
+          "value": "Code Een"
+        }
+      ]
+    }
+  ]
+}

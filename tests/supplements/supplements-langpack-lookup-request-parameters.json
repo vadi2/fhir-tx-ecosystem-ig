@@ -1,0 +1,17 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "system",
+      "valueUri": "http://hl7.org/fhir/test/CodeSystem/supp-base"
+    },
+    {
+      "name": "version",
+      "valueString": "1.0.0"
+    },
+    {
+      "name": "code",
+      "valueCode": "code1"
+    }
+  ]
+}
