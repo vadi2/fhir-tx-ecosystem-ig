@@ -5012,6 +5012,85 @@
       }
     ]
   },{
+    "name" : "supplements",
+    "mode" : "general",
+    "description" : "Testing which supplements apply to which code systems and versions: a supplement for url|version only applies to that version, and a supplement for a url does not apply to another code system whose url starts with it",
+    "setup" : ["supplements/codesystem-supp-base.json", "supplements/codesystem-supp-base-extra.json", "supplements/codesystem-supp-plain.json", "supplements/codesystem-supp-v1.json", "supplements/codesystem-supp-v2.json", "supplements/valueset-supp-base.json"],
+    "tests" : [
+      {
+        "name" : "supplements-lookup-plain",
+        "description" : "A supplement for the code system, with no version, is used for version 1.0.0",
+        "operation" : "lookup",
+        "request" : "supplements/supplements-lookup-plain-request-parameters.json",
+        "response" : "supplements/supplements-lookup-plain-response-parameters.json"
+      },
+      {
+        "name" : "supplements-lookup-v1",
+        "description" : "A supplement for version 1.0.0 of the code system (supplements = url|1.0.0) is used for version 1.0.0",
+        "operation" : "lookup",
+        "request" : "supplements/supplements-lookup-v1-request-parameters.json",
+        "response" : "supplements/supplements-lookup-v1-response-parameters.json"
+      },
+      {
+        "name" : "supplements-lookup-v2",
+        "description" : "A supplement for version 2.0.0 of the code system does not apply to version 1.0.0, so asking for it is an error",
+        "operation" : "lookup",
+        "http-code" : "4xx",
+        "request" : "supplements/supplements-lookup-v2-request-parameters.json",
+        "response" : "supplements/supplements-lookup-v2-response-outcome.json"
+      },
+      {
+        "name" : "supplements-lookup-other",
+        "description" : "A supplement for supp-base does not apply to supp-base-extra, whose url starts with the url of supp-base, so asking for it is an error",
+        "operation" : "lookup",
+        "http-code" : "4xx",
+        "request" : "supplements/supplements-lookup-other-request-parameters.json",
+        "response" : "supplements/supplements-lookup-other-response-outcome.json"
+      },
+      {
+        "name" : "supplements-validate-v1",
+        "description" : "A display from a supplement for version 1.0.0 of the code system is valid for version 1.0.0",
+        "operation" : "validate-code",
+        "request" : "supplements/supplements-validate-v1-request-parameters.json",
+        "response" : "supplements/supplements-validate-v1-response-parameters.json"
+      }
+    ]
+  },{
+    "name" : "supplements-langpack",
+    "mode" : "general",
+    "description" : "Testing which global language packs (supplements with the codesystem-supplement-type extension set to global-lang-pack) apply to which code systems and versions. A global language pack is used without being asked for, as long as it is for the code system and version in use",
+    "setup" : ["supplements/codesystem-supp-base.json", "supplements/codesystem-supp-base-extra.json", "supplements/codesystem-langpack-v1.json", "supplements/codesystem-langpack-v2.json"],
+    "tests" : [
+      {
+        "name" : "supplements-langpack-lookup",
+        "description" : "A global language pack is used without being asked for, if it is for the code system version: version 1.0.0 gets the designation from the global language pack for 1.0.0, and not the one from the global language pack for 2.0.0",
+        "operation" : "lookup",
+        "request" : "supplements/supplements-langpack-lookup-request-parameters.json",
+        "response" : "supplements/supplements-langpack-lookup-response-parameters.json"
+      },
+      {
+        "name" : "supplements-langpack-validate-v1",
+        "description" : "A display from the global language pack for version 1.0.0 is valid for version 1.0.0",
+        "operation" : "cs-validate-code",
+        "request" : "supplements/supplements-langpack-validate-v1-request-parameters.json",
+        "response" : "supplements/supplements-langpack-validate-v1-response-parameters.json"
+      },
+      {
+        "name" : "supplements-langpack-validate-v2",
+        "description" : "A display from the global language pack for version 2.0.0 is not valid for version 1.0.0",
+        "operation" : "cs-validate-code",
+        "request" : "supplements/supplements-langpack-validate-v2-request-parameters.json",
+        "response" : "supplements/supplements-langpack-validate-v2-response-parameters.json"
+      },
+      {
+        "name" : "supplements-langpack-validate-other",
+        "description" : "The global language pack for supp-base does not apply to supp-base-extra, whose url starts with the url of supp-base",
+        "operation" : "cs-validate-code",
+        "request" : "supplements/supplements-langpack-validate-other-request-parameters.json",
+        "response" : "supplements/supplements-langpack-validate-other-response-parameters.json"
+      }
+    ]
+  },{
     "name" : "tx.fhir.org",
     "mode" : "tx.fhir.org",
     "description" : "These are tx.fhir.org specific tests. There's no expectation that other servers will pass these tests, and they are not executed by default. (other servers can, but they depend on other set up not controlled by the tests",

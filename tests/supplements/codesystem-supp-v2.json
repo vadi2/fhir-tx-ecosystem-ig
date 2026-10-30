@@ -1,0 +1,27 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "supp-v2",
+  "url": "http://hl7.org/fhir/test/CodeSystem/supp-v2",
+  "version": "1.0.0",
+  "name": "SuppV2Test",
+  "title": "Supplement For Version 2.0.0",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-10-20",
+  "publisher": "FHIR Project",
+  "caseSensitive": true,
+  "content": "supplement",
+  "supplements": "http://hl7.org/fhir/test/CodeSystem/supp-base|2.0.0",
+  "description": "Supplements version 2.0.0 of supp-base, which the tests do not have, so it never applies",
+  "concept": [
+    {
+      "code": "code1",
+      "designation": [
+        {
+          "language": "fr",
+          "value": "Code Un"
+        }
+      ]
+    }
+  ]
+}

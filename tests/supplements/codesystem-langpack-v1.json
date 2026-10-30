@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "supp-langpack-v1",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/codesystem-supplement-type",
+      "valueCode": "global-lang-pack"
+    }
+  ],
+  "url": "http://hl7.org/fhir/test/CodeSystem/supp-langpack-v1",
+  "version": "1.0.0",
+  "name": "SuppLangpackV1Test",
+  "title": "Language Pack For Version 1.0.0",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-10-20",
+  "publisher": "FHIR Project",
+  "caseSensitive": true,
+  "content": "supplement",
+  "supplements": "http://hl7.org/fhir/test/CodeSystem/supp-base|1.0.0",
+  "description": "A language pack for version 1.0.0 of supp-base",
+  "concept": [
+    {
+      "code": "code1",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Código Uno"
+        }
+      ]
+    }
+  ]
+}

@@ -1644,5 +1644,11 @@
   },
   "fragment/fragment-expand-response.json" : {
     "1" : "This extension is based on a fragment of the code system http://hl7.org/fhir/test/CodeSystem/fragment"
+  },
+  "supplements/supplements-langpack-validate-v2-response-parameters.json" : {
+    "1" : "Wrong Display Name 'Codice Uno' for http://hl7.org/fhir/test/CodeSystem/supp-base#code1. There are no valid display names found for language(s) 'it'. Default display is 'Code One'"
+  },
+  "supplements/supplements-langpack-validate-other-response-parameters.json" : {
+    "1" : "Wrong Display Name 'Código Uno' for http://hl7.org/fhir/test/CodeSystem/supp-base-extra#code1. There are no valid display names found for language(s) 'es'. Default display is 'Extra Code One'"
   }
 }

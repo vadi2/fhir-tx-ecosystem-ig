@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "supp-base-extra",
+  "url": "http://hl7.org/fhir/test/CodeSystem/supp-base-extra",
+  "version": "1.0.0",
+  "name": "SuppBaseExtraTest",
+  "title": "Supplement Base Extra Test Code System",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-10-20",
+  "publisher": "FHIR Project",
+  "caseSensitive": true,
+  "language": "en",
+  "content": "complete",
+  "description": "A code system whose url starts with the url of supp-base. No supplement applies to it",
+  "concept": [
+    {
+      "code": "code1",
+      "display": "Extra Code One"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "supp-base",
+  "url": "http://hl7.org/fhir/test/ValueSet/supp-base",
+  "version": "1.0.0",
+  "name": "SuppBaseTest",
+  "title": "Supplement Base Test Value Set",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-10-20",
+  "publisher": "FHIR Project",
+  "description": "All the codes in version 1.0.0 of supp-base",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/test/CodeSystem/supp-base",
+        "version": "1.0.0"
+      }
+    ]
+  }
+}
